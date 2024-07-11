@@ -26,16 +26,19 @@
         width: 90%;
         height: 30px;
 
-        &:nth-child(1){
+        &:nth-child(1) {
             width: 75%;
         }
-        &:nth-child(3){
+
+        &:nth-child(3) {
             width: 60%;
         }
-        &:nth-child(5){
+
+        &:nth-child(5) {
             width: 70%;
         }
-        &:nth-child(7){
+
+        &:nth-child(7) {
             width: 82%;
         }
     }

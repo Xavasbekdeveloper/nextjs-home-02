@@ -3,6 +3,7 @@ import "./globals.scss";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import StoreProvider from "./StoreProvider";
+import DefaultValues from "@/components/default-value/DefaultValue";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,12 +13,12 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const initialCount = 1;
   return (
     <html lang="en">
-      <StoreProvider count={initialCount}>
+      <StoreProvider>
         <body className={inter.className}>
           <Header />
+          <DefaultValues />
           {children}
           <Footer />
         </body>
