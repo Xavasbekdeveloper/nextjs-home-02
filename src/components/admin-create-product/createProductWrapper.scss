@@ -1,0 +1,46 @@
+.create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 40px;
+    padding-left: 20px;
+
+    input,
+    select {
+        width: 340px;
+        border: 1px solid gray;
+        border-radius: 6px;
+        outline: none;
+        height: 40px;
+        text-indent: 14px;
+        font-size: 14px;
+        color: gray;
+    }
+
+    option {
+        padding: 6px;
+    }
+
+    textarea {
+        padding: 10px;
+        width: 340px;
+        height: 100px;
+        resize: none;
+        border: 1px solid gray;
+        border-radius: 6px;
+        outline: none;
+        font-size: 14px;
+        color: gray;
+    }
+
+    button {
+        width: 340px;
+        height: 40px;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 14px;
+        outline: none;
+        border: none;
+        background-color: rgb(42, 42, 42);
+    }
+}

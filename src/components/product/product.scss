@@ -17,6 +17,23 @@
         color: #5E6E89;
     }
 
+    &__category {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        overflow: auto;
+        text-wrap: nowrap;
+        margin-top: 20px;
+        padding-bottom: 5px;
+
+        data {
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+
     &__cards {
         padding: 30px 0;
         display: grid;

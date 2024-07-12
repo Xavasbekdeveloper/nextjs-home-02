@@ -1,0 +1,36 @@
+.manage-category {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+
+    &-card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0;
+
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgb(42, 42, 42);
+            padding: 5px 8px;
+            border-radius: 10px;
+            outline: none;
+            background-color: transparent;
+        }
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}

@@ -1,0 +1,55 @@
+.admin {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+
+
+    &__sidebar {
+        position: sticky;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background-color: rgb(42, 42, 42);
+        color: #fff;
+        padding: 20px;
+
+        &__top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+
+            a {
+                font-size: 22px;
+            }
+
+            &__btn {
+                border: none;
+                background-color: transparent;
+                padding: 0;
+                margin: 0;
+            }
+
+            svg {
+                width: 20px;
+                height: 20px;
+                color: #fff;
+            }
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__item {
+            padding: 14px 0;
+            border-radius: 6px;
+            transition: all .3s ease-in-out;
+        }
+
+        &__active-item {
+            background-color: gray;
+            padding-left: 10px;
+        }
+    }
+}

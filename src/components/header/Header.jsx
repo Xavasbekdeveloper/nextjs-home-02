@@ -10,11 +10,16 @@ import { FaBars } from "react-icons/fa6";
 import "./header.scss";
 import Link from "next/link";
 import { useSelector } from "react-redux";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [show, setShow] = useState(false);
   const wishlistData = useSelector((state) => state.wishlist.data);
   const cartData = useSelector((state) => state.cart.value);
+  const path = usePathname();
+
+  if (path.includes("/admin")) return <></>;
+
   return (
     <header className="header">
       <div
@@ -39,7 +44,7 @@ const Header = () => {
           <li className="header__item">Contact us</li>
         </ul>
         <div className="header__icons">
-          <Link href={"/account"} className="header__icon">
+          <Link href={"/admin/create-product"} className="header__icon">
             <IoPersonOutline />
           </Link>
           <Link href={"/cart"} className="header__icon">

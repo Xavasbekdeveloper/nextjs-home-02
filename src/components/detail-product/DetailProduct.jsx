@@ -5,10 +5,23 @@ import "./detailProduct.scss";
 import Image from "next/image";
 import { useGetProductByIdQuery } from "@/lib/api/productsApi";
 import DetailLoading from "../detail-loading/DetailLoading";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToCart,
+  decreaseAmount,
+  increaseAmount,
+  removeCart,
+} from "@/lib/features/cart/cartSlice";
 
 const DetailProduct = ({ productId }) => {
   const [count, setCount] = useState(1);
   const { data, isLoading } = useGetProductByIdQuery(productId);
+  const cartData = useSelector((state) => state.cart.value);
+  const dispatch = useDispatch();
+
+  const existProduct = cartData?.find((el) => el.id === data?.id);
+
+  console.log(existProduct);
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -69,9 +82,32 @@ const DetailProduct = ({ productId }) => {
                   {data?.description}
                   <span>See details</span>
                 </p>
-                <button className="detail__btn">
-                  <IoCartOutline /> <span>+ Add to cart</span>
-                </button>
+                {existProduct ? (
+                  <div>
+                    <button
+                      onClick={() =>
+                        dispatch(
+                          existProduct.amount <= 1
+                            ? removeCart(data)
+                            : decreaseAmount(data)
+                        )
+                      }
+                    >
+                      -
+                    </button>
+                    <span>{existProduct.amount}</span>
+                    <button onClick={() => dispatch(increaseAmount(data))}>
+                      +
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => dispatch(addToCart(data))}
+                    className="detail__btn"
+                  >
+                    <IoCartOutline /> <span>+ Add to cart</span>
+                  </button>
+                )}
               </div>
             </div>
             <div className="detail__information">
